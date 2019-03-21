@@ -69,5 +69,9 @@ $(function () {
         })
     })
 
-
+    //表单重置功能
+    $('[type=reset]').on('click', function () {
+        //调用表单插件的resetForm方法
+        $form.data('bootstrapValidator').resetForm(true); 
+    })
 })
