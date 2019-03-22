@@ -26,3 +26,14 @@ $(document).ajaxStop(function () {
         NProgress.done(); 
     }, 500)
 })
+
+
+//二级菜单的显示与隐藏
+$('.second').prev().on('click', function(){
+    $(this).next().stop().slideToggle()
+})
+
+//侧滑菜单的显示与隐藏
+$('.topbar .left').click(function(){
+    $('.lt_aside, .lt_main, .topbar ').toggleClass('now');
+})

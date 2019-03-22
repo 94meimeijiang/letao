@@ -2,15 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-
+    <title>首页</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css" />
+    <link rel="stylesheet" href="css/common.css" />
 </head>
 <body>
-首页
-    <script>
+    <!-- 侧边导航 -->
+    <div class="lt_aside">
+        <div class="brand">
+            <a href="index.html">乐淘首页</a>
+        </div>
+        <div class="userinfo">
+            <img src="./images/猫咪老师.jpg" alt="">
+            <p>超级管理员</p>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="user.html">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span>用户管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="glyphicon glyphicon-list"></span>
+                        <span>分类管理</span>
+                    </a>
+                    <div class="second" style="display:none">
+                        <a href="first.html">一级分类</a>
+                        <a href="second.html">二级分类</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">
+                        <span class="glyphicon glyphicon-tags"></span>
+                        <span>商品管理</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-      
+    <!-- 主体部分 -->
+    <div class="lt_main">
+        <!-- 顶部退出栏 -->
+        <div class="topbar">
+            <a class="left pull-left" href="javascript:;">
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </a>
+            <a class="right pull-right" href="javascript:;">
+                <span class="glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+        <!-- 面包屑导航 -->
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li><a href="#">管理系统</a></li>
+                <li class="active">首页</li>
+            </ol>
+        </div>
+        <!-- 每个页面具体的内容 -->
+    </div>
 
-    </script>
+
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/nprogress/nprogress.js"></script>
+    <!-- <script src="lib/echarts/echarts.min.js"></script> -->
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
