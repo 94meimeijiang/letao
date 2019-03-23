@@ -132,3 +132,9 @@ html,body{
   color: #337ab7;
 }
 
+.lt_content .left,
+.lt_content .right{
+  height: 400px;
+  width: 48%;
+  /* background-color: pink; */
+}

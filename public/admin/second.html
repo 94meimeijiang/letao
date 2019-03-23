@@ -20,7 +20,7 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a href="user.html">
+                    <a href="user.html" >
                         <span class="glyphicon glyphicon-user"></span>
                         <span>用户管理</span>
                     </a>
@@ -30,9 +30,9 @@
                         <span class="glyphicon glyphicon-list"></span>
                         <span>分类管理</span>
                     </a>
-                    <div class="second" style="display:none">
-                        <a href="first.html">一级分类</a>
-                        <a href="second.html">二级分类</a>
+                    <div class="second" style="display:block">
+                        <a  href="first.html">一级分类</a>
+                        <a class="active" href="second.html">二级分类</a>
                     </div>
                 </li>
                 <li>
@@ -60,14 +60,11 @@
         <div class="container-fluid">
             <ol class="breadcrumb">
                 <li><a href="#">管理系统</a></li>
-                <li class="active">首页</li>
+                <li><a href="#">分类管理</a></li>
+                <li class="active">二级分类管理系统</li>
             </ol>
         </div>
         <!-- 每个页面具体的内容 -->
-        <div class="lt_content">
-            <div class="left pull-left"></div>
-            <div class="right pull-right"></div>
-        </div>
     </div>
 
     <!-- 退出模态框 -->
@@ -95,7 +92,7 @@
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
-    <script src="lib/echarts/echarts.min.js"></script>
+    <!-- <script src="lib/echarts/echarts.min.js"></script> -->
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
 </body>

@@ -37,3 +37,34 @@ $('.second').prev().on('click', function(){
 $('.topbar .left').click(function(){
     $('.lt_aside, .lt_main, .topbar ').toggleClass('now');
 })
+
+//退出功能
+$('.topbar .right').on('click', function(){
+    $('#logoutModal').modal('show');
+})
+
+//给确定按钮注册点击事件, 注意: 不要在事件中注册事件
+$('.confirm').on('click',function(){
+    //发送Ajax请求, 告诉服务器需要退出
+    // $.ajax({
+    //     type:'get',
+    //     url: '/employee/employeeLogout',
+    //     success: function(info){
+    //         if(info.success){
+    //             location.href = 'login.html';
+    //         }
+    //     }
+    // })
+
+    //可以用$.get发送请求
+    //参数1: url地址
+    //参数2. 可选的data
+    //参数3. success的回调
+    $.get('/employee/employeeLogout', function(info){
+        if (info.success) {
+            location.href = 'login.html';
+        }
+    })
+  // $.post(url, data, function(){})
+
+})
