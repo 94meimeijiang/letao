@@ -138,3 +138,10 @@ html,body{
   width: 48%;
   /* background-color: pink; */
 }
+
+/* 用户页 */
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
