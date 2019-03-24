@@ -17,6 +17,7 @@
 // NProgress.start  开始进度条
 // NProgress.done  结束进度条
 $(document).ajaxStart(function () {
+    NProgress.configure({ showSpinner: false });
     // console.log('请求开始了');
     NProgress.start(); 
 })
