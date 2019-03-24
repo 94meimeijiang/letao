@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>分类管理-一级分类</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css" />
     <link rel="stylesheet" href="css/common.css" />
 </head>
@@ -64,6 +65,24 @@
                 <li class="active">一级分类管理系统</li>
             </ol>
              <!-- 每个页面具体的内容 -->
+             <div class="lt_content">
+                <button class="btn btn-default btn_add">添加分类</button>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width="20%">序号</th>
+                            <th>一级分类名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <!-- 通过引擎模板和ajax动态渲染到页面中 -->
+                    </tbody>
+                </table>
+                <!-- 给分页准备一个盒子 -->
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
+             </div>
         </div>
     </div>
 
@@ -88,12 +107,48 @@
     </div>
 
 
+    <!-- 添加分类的模态框 -->
+    <div id="addModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                <form id="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" name="categoryName" class="form-control" autocomplete="off" placeholder="请输入一级分类">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">确定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
 
     <script src="lib/jquery/jquery.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>    
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
-    <!-- <script src="lib/echarts/echarts.min.js"></script> -->
+    <script src="lib/artTemplate/template-web.js"></script>
     <script src="js/common.js"></script>
     <script src="js/first.js"></script>
+
+    <!-- 动态渲染表格 -->
+    <script type="text/html" id="tpl">
+        {{each rows v i}}
+        <tr>
+            <td>{{(page - 1)* size + i + 1}}</td>
+            <td>{{v.categoryName}}</td>
+        </tr>
+        {{/each}}
+    </script>
 </body>
 </html>
