@@ -1,9 +1,9 @@
-
+ var page = 1;
 $(function(){
     //1.等待dom的加载
     //2.避免了全局污染
     
-    var page = 1;
+   
     var pageSize = 5;
     var id, isDelete;
     // 渲染页面
@@ -70,19 +70,20 @@ $(function(){
                 //currentpage  当前页
                 //totalPages  总页数(Math.ceil(info.total / info.size),)
                 // onPageClicked  通过第四个page参数就可以获取到第几页
-            $('#paginator').bootstrapPaginator({
-                bootstrapMajorVersion: 3,
-                currentpage:page,
-                totalPages:Math.ceil(info.total / info.size),
-                //当分页的按钮被点击的时候执行
-                onPageClicked: function(a,b,c,newPage){
-                    // console.log('haha',page);
-                    page = newPage;
-                    //重新发送ajax请求,渲染页面
-                    render();
-                }
+            // $('#paginator').bootstrapPaginator({
+            //     bootstrapMajorVersion: 3,
+            //     currentpage:page,
+            //     totalPages:Math.ceil(info.total / info.size),
+            //     //当分页的按钮被点击的时候执行
+            //     onPageClicked: function(a,b,c,newPage){
+            //         // console.log('haha',page);
+            //         page = newPage;
+            //         //重新发送ajax请求,渲染页面
+            //         render();
+            //     }
 
-            })
+            // })
+            paginator(info, render);
 
         }
     })

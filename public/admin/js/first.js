@@ -1,6 +1,6 @@
-
+  var page = 1;
 $(function(){
-    var page = 1;
+  
     var pageSize = 5;
 
     render();
@@ -83,18 +83,20 @@ $(function(){
                 $('tbody').html(html);
 
                 //分页
-               $('#paginator').bootstrapPaginator({
-                   bootstrapMajorVersion: 3,
-                   currentpage: page,
-                   totalPages: Math.ceil(info.total / info.size),
-                   //当分页的按钮被点击的时候执行
-                   onPageClicked: function (a, b, c, newPage) {
-                       // console.log('haha',page);
-                       page = newPage;
-                       //重新发送ajax请求,渲染页面
-                       render();
-                   }
-               })
+            //    $('#paginator').bootstrapPaginator({
+            //        bootstrapMajorVersion: 3,
+            //        currentpage: page,
+            //        totalPages: Math.ceil(info.total / info.size),
+            //        //当分页的按钮被点击的时候执行
+            //        onPageClicked: function (a, b, c, newPage) {
+            //            // console.log('haha',page);
+            //            page = newPage;
+            //            //重新发送ajax请求,渲染页面
+            //            render();
+            //        }
+            //    })
+            //使用封装好的
+            paginator(info, render);
            }
        })
    }

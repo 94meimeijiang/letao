@@ -1,3 +1,5 @@
+
+
 //实现一些公共的js功能
 
 //加载进度条
@@ -69,3 +71,47 @@ $('.confirm').on('click',function(){
   // $.post(url, data, function(){})
 
 })
+
+/**
+ * 
+ * @param {*} info 分页的数据
+ * @param {*} render  点击分页之后的回调函数  
+ */
+function paginator(info, render){
+    $('#paginator').bootstrapPaginator({
+        bootstrapMajorVersion: 3,
+        //size 调整尺寸
+        size:'small',
+        //当前页
+        currentpage: info.page,
+        totalPages: Math.ceil(info.total / info.size),
+        //分页按钮一次显示的页数
+        numberOfPages: 5,
+        //控制每个按钮的显示内容
+        itemTexts: function(type, page, current){
+            // console.log(type,page,current);
+            switch(type){
+                case "first":
+                    return '首页'
+                case "prev":
+                    return '上一页'
+                case "next":
+                    return '下一页'
+                case "last":
+                    return '尾页'
+                default:
+                    return page
+            }
+        },
+        //使用bootatrap的tooltip组件
+        uesBootstarpTooltip: true,
+        //当分页的按钮被点击的时候执行
+        onPageClicked: function (a, b, c, newPage) {
+            // console.log('haha',page);
+            page = newPage;
+            //重新发送ajax请求,渲染页面
+            render();
+        }
+
+    })
+}
