@@ -114,8 +114,8 @@ $(function(){
                 page = 1;
                 render();
                 // //重置下拉按钮的文字和图片
-                //     $('.dropdown-text').text('请选择一级分类')
-                //     $('.img_box img').attr('src', 'images/default.png')
+                    $('.dropdown-text').text('请选择一级分类')
+                    $('.img_box img').attr('src', 'images/default.png')
                 }
                 
             }
