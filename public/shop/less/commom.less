@@ -8,6 +8,11 @@ ul, ol {
   margin: 0;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 .lt_container {
   width: 100%;
   height: 100%;
@@ -21,85 +26,137 @@ ul, ol {
   overflow: hidden;
 }
 
-.lt_header{
-  width: 100%;
+.lt_header {
   height: 45px;
+  width: 100%;
   background-color: #006699;
   position: absolute;
   top: 0;
   z-index: 999;
+  padding-left: 45px;
+  padding-right: 45px;
   .icon_left,
-  .icon_right{
+  .icon_right {
     position: absolute;
     width: 45px;
     height: 45px;
     top: 0;
-    text-align: center;
     line-height: 45px;
-
-    a{
+    text-align: center;
+    a {
       color: #fff;
     }
   }
   .icon_left{
     left: 0;
   }
-  .icon_right{
+  .icon_right {
     right: 0;
   }
-  .title{
+  .title {
     width: 100%;
     height: 45px;
-    h3{
-       font-weight: 400;
-       color: #fff;
-       font-size: 20px;
-       text-align: center;
-       line-height: 45px;
-       margin: 0;
+    h3 {
+      color: #fff;
+      font-weight: 400;
+      line-height: 45px;
+      text-align: center;
+      font-size: 20px;
+      margin: 0;
     }
   }
 }
 
-.lt_footer{
-  width: 100%;
+.lt_footer {
   height: 55px;
+  width: 100%;
   background-color: #006699;
   position: absolute;
   bottom: 0;
   z-index: 999;
 
-  li{
+  li {
     float: left;
     width: 25%;
     text-align: center;
     padding-top: 5px;
 
-    a{
-      color: #fff;
-      p{
-        color: #fff;
+    &.active {
+      a {
+        color: orange;
+        p {
+          color: orange;
+        }
       }
     }
-    
-    &.active{
-      a{
-        color: orange;
-      p{
-        color: orange;
+    a {
+      color: #fff;
+      p {
+        color: #fff;
+        margin-bottom: 0;
       }
     }
   }
 }
 
-.lt_main{
+
+.lt_main {
   width: 100%;
   height: 100%;
   background-color: #fff;
   position: relative;
 }
 
-img{
-  display: block;
-  width: 100%;
+.lt_search {
+  padding: 10px;
+  position: relative;
+  input {
+    height: 34px;
+    padding: 0;
+    margin: 0;
+    line-height: 34px;
+    font-size: 12px;
+    padding-left: 20px;
+    border: 1px solid #007AFF;
+  }
+
+  button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+.product {
+  padding: 10px; 
+  overflow: hidden;
+
+  // &: 父选择器  sass(less)
+  &-item {
+    float: left;
+    width: 48%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    &:nth-child(odd) {
+      margin-right: 4%;
+    }
+
+    .good_name {
+      height: 40px;
+    }
+
+    .good_price {
+      span:first-child {
+        color: red;
+      }
+
+      span:last-child {
+        text-decoration: line-through;
+      }
+    }
+  }
 }

@@ -47,8 +47,23 @@ $(function(){
 */
     $('.lt_history').on('click', '.btn_empty', function () {
         localStorage.removeItem('search_history')
-        // 重新渲染
-        render();
+        //参数1: 提示的内容
+        //参数2: 提示的标题
+        //参数3: 设置按钮的内容
+        //参数4: 回调函数
+        mui.confirm(
+            '您确定 要清空历史记录吗?',
+            '温馨提示',
+            ['确定', '取消'],
+            function(e){
+                if(e.index === 0){
+                    localStorage.removeItem(KEY)
+                     // 重新渲染
+                render(); 
+                }
+            }
+        )
+      
     })
 
 
@@ -94,7 +109,7 @@ $(function(){
         // console.log(history)
         localStorage.setItem(KEY, JSON.stringify(history))
 
-        render()
+        // render()
 
         // 跳转到商品搜索结果页面
         location.href = 'searchList.html?key=' + value
